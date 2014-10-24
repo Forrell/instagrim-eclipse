@@ -27,13 +27,35 @@
        
         <article>
             <h3>Login</h3>
-            <form method="POST"  action="Login">
+            
+            
+<!-- My First pass at Input validation , at the form level. This stops the user killing the web application with null entry -->
+
+		<script>
+				function validateForm() {
+				if (document.frm.username.value == "") {
+					alert("User Name should not be empty");
+					document.frm.username.focus();
+					return false;
+				} else if (document.frm.password.value == "") {
+					alert("Password should be not be empty");
+					document.frm.password.focus();
+					return false;
+				}
+			}
+		</script>
+
+		<form name="frm" method="POST"  action="Login"  onSubmit="return validateForm()">
                 <ul>
                     <li>User Name <input type="text" name="username"></li>
                     <li>Password <input type="password" name="password"></li>
                 </ul>
                 <br/>
                 <input type="submit" value="Login"> 
+                
+                
+             
+                
             </form>
 
         </article>

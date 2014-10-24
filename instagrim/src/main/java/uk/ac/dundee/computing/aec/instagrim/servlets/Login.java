@@ -68,7 +68,11 @@ public class Login extends HttpServlet {
 	    rd.forward(request,response);
             
         }else{
+        	
+        	// incorrect login error message to console
+        	System.err.println("Incorrect Login.");
             response.sendRedirect("/Instagrim/login.jsp");
+      
         }
         
     }

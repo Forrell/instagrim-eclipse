@@ -19,7 +19,7 @@
             <h1>InstaGrim ! </h1>
             <h2>Your world in Black and White</h2>
         </header>
-        <nav>
+        <nav CLASS = "menu">
             <ul>
 
                
@@ -33,6 +33,8 @@
                     %>
 
                 <li><a href="/Instagrim/Images/<%=lg.getUsername()%>">Your Images</a></li>
+                 <li><a href="logout.jsp">Logout</a></li>
+                 <li><a href="profile.jsp">Profile</a></li>
                     <%}
                             }else{
                                 %>
@@ -47,7 +49,7 @@
         <footer>
             <ul>
                 <li class="footer"><a href="/Instagrim">Home</a></li>
-                <li>&COPY; Andy C</li>
+                <li>&COPY; Forrest J Gordon</li>
             </ul>
         </footer>
     </body>

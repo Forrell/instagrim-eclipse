@@ -26,13 +26,35 @@
        
         <article>
             <h3>Register as user</h3>
-            <form method="POST"  action="Register">
+            
+            
+            <script>
+				function validateForm() {
+				if (document.frm.username.value == "") {
+					alert("User Name should not be empty");
+					document.frm.username.focus();
+					return false;
+				} else if (document.frm.password.value == "") {
+					alert("Password should be not be empty");
+					document.frm.password.focus();
+					return false;
+				}
+			}
+				
+				
+		</script>
+
+		<form name="frm" method="POST"  action="Register"  onSubmit="return validateForm()">
                 <ul>
+                	<li>First Name <input type="text" name="first_name"></li>
+               		<li>Last Name <input type="text" name="last_name"></li>
+               		<li>Your Address <input type="text" name="address"></li>
+               		<li>Email Address <input type="email" name="email"></li>
                     <li>User Name <input type="text" name="username"></li>
                     <li>Password <input type="password" name="password"></li>
                 </ul>
                 <br/>
-                <input type="submit" value="Regidter"> 
+                <input type="submit" value="Register"> 
             </form>
 
         </article>
