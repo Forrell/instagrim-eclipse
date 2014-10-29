@@ -3,7 +3,7 @@
     Created on : Sep 22, 2014, 6:31:50 PM
     Author     : Administrator
 --%>
-
+<%@page import="uk.ac.dundee.computing.aec.instagrim.stores.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,16 +13,38 @@
         <link rel="stylesheet" type="text/css" href="Styles.css" />
     </head>
     <body>
-        <h1>InstaGrim ! </h1>
-        <h2>Your world in Black and White</h2>
-        <nav>
-            <ul>
-                <li class="nav"><a href="upload.jsp">Upload</a></li>
-                <li class="nav"><a href="/Instagrim/Images/majed">Sample Images</a></li>
-            </ul>
+        <header >
+            
+        </header>
+        <nav id="top" >
+            <ul id="menu">
+          	  <li><a href="/Instagrim/index.jsp"><img src="http://i.imgur.com/PzqdyMRl.png" title="source: imgur.com" /></a></li>
+                <li><a href="upload.jsp" >Upload</a></li>
+                    <%
+                        
+                        LoggedIn lg = (LoggedIn) session.getAttribute("LoggedIn");
+                        if (lg != null) {
+                            String UserName = lg.getUsername();
+                            if (lg.getlogedin()) {
+                    %>
+
+
+
+                 <li><a href="/Instagrim/profile.jsp">Profile</a></li>
+                 <li><a href="/Instagrim/Images/<%=lg.getUsername()%>">Your Images</a></li>
+                 <li><a href="logout.jsp">Logout</a></li>
+         
+                    <%}
+                            }else{
+                            	
+                                %>
+                 <li><a href="register.jsp">Register</a></li>
+                <li><a href="login.jsp">Login</a></li>
+                <%               
+                    }%>
+               
+   </ul>
         </nav>
- 
-        <article>
             <h3>File Upload</h3>
             <form method="POST" enctype="multipart/form-data" action="Image">
                 File to upload: <input type="file" name="upfile"><br/>
@@ -32,9 +54,9 @@
             </form>
 
         </article>
-        <footer>
+         <footer>
             <ul>
-                <li class="footer"><a href="/Instagrim">Home</a></li>
+                <li class="footer"><a href="/Instagrim"><h2>Home</h2></a></li>
             </ul>
         </footer>
     </body>

@@ -12,16 +12,59 @@ package uk.ac.dundee.computing.aec.instagrim.stores;
  */
 public class LoggedIn {
     boolean logedin=false;
+    
+    //added some new String variables to the logged in store
     String Username=null;
+    String first_name = null;
+    String last_name = null;
+    String email = null;
+    String picid = null;
+
+
     public void LogedIn(){
-        
+
+    }
+
+    public void setUsername(String name){
+    	this.Username=name;
+    }
+
+    public String getUsername(){
+    	return Username;
+    }
+
+    
+  
+    
+    public void setPicid(String picid) {
+    	this.picid = picid;
+    }
+    public String getPicid() {
+    	return picid;
     }
     
-    public void setUsername(String name){
-        this.Username=name;
+    
+    public void setEmail(String email){
+    	this.email=email;
     }
-    public String getUsername(){
-        return Username;
+    
+    public String getEmail(){
+    	return email;
+    }
+    
+    public void setFirstName(String firstName){
+    	this.first_name=firstName;
+    }
+    public String getFirstName(){
+    	return first_name;
+    }
+    
+    public void setLastName(String lastName){
+    	this.last_name=lastName;
+    }
+    
+    public String getLastName(){
+    	return last_name;
     }
     public void setLogedin(){
         logedin=true;

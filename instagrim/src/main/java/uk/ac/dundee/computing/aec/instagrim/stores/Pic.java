@@ -19,7 +19,7 @@ public class Pic {
     private String type;
     private java.util.UUID UUID=null;
     
-    public void Pic() {
+    public Pic() {
 
     }
     public void setUUID(java.util.UUID UUID){

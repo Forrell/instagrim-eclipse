@@ -34,7 +34,7 @@ import uk.ac.dundee.computing.aec.instagrim.stores.Pic;
     "/Thumb/*",
     "/Images",
     "/Images/*",
-    "/Profile/*"
+
 })
 @MultipartConfig
 
@@ -55,8 +55,11 @@ public class Image extends HttpServlet {
         CommandsMap.put("Image", 1);
         CommandsMap.put("Images", 2);
         CommandsMap.put("Thumb", 3);
+        
 
     }
+    
+   
 
     public void init(ServletConfig config) throws ServletException {
         // TODO Auto-generated method stub
@@ -101,6 +104,9 @@ public class Image extends HttpServlet {
         rd.forward(request, response);
 
     }
+    
+    
+    
 
     private void DisplayImage(int type,String Image, HttpServletResponse response) throws ServletException, IOException {
         PicModel tm = new PicModel();
@@ -163,4 +169,7 @@ public class Image extends HttpServlet {
         out.close();
         return;
     }
+    
+    
+
 }
